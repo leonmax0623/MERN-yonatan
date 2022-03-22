@@ -1,0 +1,29 @@
+[
+  {
+    "id": "1",
+    "name": "Rings",
+    "designation": "Choose a strong diamond for your strong love",
+    "image": "/assets/images/yonatan-images/home_6.png",
+    "facebookUrl": "https://www.facebook.com",
+    "googlePlusUrl": "https://plus.google.com",
+    "twitterUrl": "https://www.twitter.com"
+  },
+  {
+    "id": "2",
+    "name": "Bracelets",
+    "designation": "Capture most exciting moments forever",
+    "image": "/assets/images/yonatan-images/home_7.png",
+    "facebookUrl": "https://www.facebook.com",
+    "googlePlusUrl": "https://plus.google.com",
+    "twitterUrl": "https://www.twitter.com"
+  },
+  {
+    "id": "3",
+    "name": "Earrings",
+    "designation": "Hear the happiness that will accompany you",
+    "image": "/assets/images/yonatan-images/home_8.png",
+    "facebookUrl": "https://www.facebook.com",
+    "googlePlusUrl": "https://plus.google.com",
+    "twitterUrl": "https://www.twitter.com"
+  }
+]

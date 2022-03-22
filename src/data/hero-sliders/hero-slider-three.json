@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "url": "/shop/left-sidebar",
+    "image": "/assets/images/yonatan-images/home_1.png",
+    "bgImage": "/assets/images/yonatan-images/home_1.png"
+  },
+  {
+    "id": "2",
+    "url": "/shop/left-sidebar",
+    "image": "/assets/images/yonatan-images/home_1.png",
+    "bgImage": "/assets/images/yonatan-images/home_1.png"
+  },
+  {
+    "id": "3",
+    "url": "/shop/left-sidebar",
+    "image": "/assets/images/yonatan-images/home_1.png",
+    "bgImage": "/assets/images/yonatan-images/home_1.png"
+  }
+]
