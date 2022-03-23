@@ -13,6 +13,7 @@ import { getProducts } from "../lib/product";
 
 
 const Home = ({ products }) => {
+  console.log('products: ', products);
   return (
     <LayoutHome>
 
@@ -105,7 +106,7 @@ const Home = ({ products }) => {
 const mapStateToProps = (state) => {
   const products = state.productData;
   return {
-    products: getProducts(products, "jewelry", "popular", 9)
+    products: getProducts(products, "Fashion Rings", "Fashion Rings", 9)
   };
 };
 

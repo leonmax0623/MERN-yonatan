@@ -8,9 +8,10 @@ import { LayoutHome } from "../../components/Layout";
 import {
   ShopFilter, ShopHeader, ShopProducts, ShopSidebar
 } from "../../components/Shop";
+import initProducts from "../../data/products.json";
 import { getSortedProducts } from "../../lib/product";
 
-const LeftSidebar = ({ products }) => {
+const LeftSidebar = () => {
   const [layout, setLayout] = useState("grid four-column");
   const [sortType, setSortType] = useState("");
   const [sortValue, setSortValue] = useState("");
@@ -21,6 +22,7 @@ const LeftSidebar = ({ products }) => {
   const [currentData, setCurrentData] = useState([]);
   const [sortedProducts, setSortedProducts] = useState([]);
   const [shopTopFilterStatus, setShopTopFilterStatus] = useState(false);
+  const [products, setProducts] = useState([]);
 
   const pageLimit = 20;
 
@@ -37,6 +39,10 @@ const LeftSidebar = ({ products }) => {
     setFilterSortType(sortType);
     setFilterSortValue(sortValue);
   };
+
+  useEffect(() => {
+    setProducts(initProducts);
+  }, []);
 
   useEffect(() => {
     let sortedProducts = getSortedProducts(products, sortType, sortValue);
