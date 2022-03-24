@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import ThreeSixty from "react-360-view";
 import { Col, Container, Row } from "react-bootstrap";
 import { connect } from "react-redux";
 import { useToasts } from "react-toast-notifications";
@@ -72,6 +73,16 @@ const ProductBasic = ({
                 deleteFromWishlist={deleteFromWishlist}
               />
             </Col>
+
+            <ThreeSixty
+              amount={8}
+              imagePath={
+                process.env.PUBLIC_URL +
+                "/assets/images/yonatan-images/products"
+              }
+              fileName="h_ring_{index}.jpg"
+              spinReverse
+            />
 
             <Col lg={6}>
               {/* product description */}
