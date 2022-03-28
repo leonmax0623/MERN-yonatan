@@ -164,7 +164,7 @@ const Home = ({ products }) => {
           <Row>
             <Col lg={12} xl={12} style={{ paddingLeft: "130px", paddingRight: "130px", textAlign: "center" }}>
               <div className="banner-cta-content">
-                <h2 className="banner-cta-content__subtitle" style={{ fontFamily: "cargenregular", fontSize: "45px", color: "white" }}>
+                <h2 className="banner-cta-content__subtitle" style={{ fontFamily: "cargenregular", fontSize: "2.5rem", color: "white" }}>
                   Every customer is an ambassador...
                 </h2>
                 <br />
@@ -202,7 +202,7 @@ const Home = ({ products }) => {
         </Col>
         <Col xl={6} lg={6} style={{ display: "flex", paddingLeft: "30px", paddingRight: "30px" }}>
           <div className="about-widget ">
-            <h2 className="banner-cta-content__subtitle" style={{ fontFamily: "cargenregular", fontSize: "45px", color: "black", marginBottom: "20px", marginTop: "0px" }}>
+            <h2 className="banner-cta-content__subtitle" style={{ fontFamily: "cargenregular", fontSize: "2.5rem", color: "black", marginBottom: "20px", marginTop: "0px" }}>
               Design dreams together
             </h2>
             <p className="widget-content" style={{ fontFamily: "sailecmedium", fontSize: "15px" }}>

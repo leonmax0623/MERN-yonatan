@@ -34,10 +34,6 @@
 
       img {
         border-radius: 0;
-
-@include respond(large-mobile) {
-          width: 100%;
-        }
       }
 
       &:after {
@@ -102,6 +98,31 @@
         }
       }
 
+      .fontStyleMain {
+        font-size: 45px;
+        text-align: left;
+        font-family: 'cargenregular';
+        line-height: 1;
+        margin-bottom: 20px;
+
+        @include respond(large-mobile) {
+          font-size: 30px;
+          text-align: center;
+        }
+      }
+
+      .fontStyleDetail {
+        font-size: 18px !important;
+        text-align: left;
+        font-family: 'sailecmedium';
+        line-height: 1;
+    
+        @include respond(large-mobile) {
+          font-size: 15px !important;
+          text-align: center;
+        }
+      }
+
       .subtext {
         display: inline-block;
 
@@ -145,6 +166,9 @@
     border-radius: 100%;
   }
 
+  @include respond(large-mobile) {
+    width: 70%;
+  }
 
   &:after {
     position: absolute;

@@ -81,7 +81,7 @@ const OrderTracking = () => {
           <Row>
             <Col lg={12} xl={12}>
               <div className="banner-cta-content">
-                <h2 className="banner-cta-content__subtitle" style={{ fontFamily: "cargenregular", fontSize: "45px", color: "black", textAlign: "center" }}>
+                <h2 className="banner-cta-content__subtitle" style={{ fontFamily: "cargenregular", fontSize: "2.5rem", color: "black", textAlign: "center" }}>
                   Quality under warranty
                 </h2>
               </div>
@@ -91,13 +91,13 @@ const OrderTracking = () => {
       </div>
 
       <div style={{ padding: "0px 60px 0px 60px", textAlign: "center" }}>
-        <p className="widget-content" style={{ fontFamily: "sailecmedium", fontSize: "18px" }}>
+        <p className="widget-content" style={{ fontFamily: "sailecmedium", fontSize: "1.1rem" }}>
           Every piece of jewelry that passes between my hands, comes to light only after it is perfect. In life as in life, things change - but my loyalty to customers remains stable.
         </p>
-        <p className="widget-content" style={{ fontFamily: "sailecmedium", fontSize: "18px" }}>
+        <p className="widget-content" style={{ fontFamily: "sailecmedium", fontSize: "1.1rem" }}>
           My studio is a home - to fix, upgrade, reduce, enlarge, add, innovate - even after years, it is important to me that the jewelry that creates my name, will look like it came out of the jeweler yesterday.
         </p>
-        <p className="widget-content" style={{ fontFamily: "sailecmedium", fontSize: "18px" }}>
+        <p className="widget-content" style={{ fontFamily: "sailecmedium", fontSize: "1.1rem" }}>
           But most of all - that my customers will be smiling and satisfied every time they look at the piece of jewelry they are wearing, that they will look at it and be filled with love.
         </p>
       </div>

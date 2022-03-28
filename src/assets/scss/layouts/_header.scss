@@ -78,7 +78,7 @@ header {
       }
     }
 
-    .header-content__icons {
+    .header-content__icons, .userIcon {
       & > ul {
         & > li {
           & > a,
@@ -157,7 +157,7 @@ header {
         }
       }
 
-      .header-content__icons {
+      .header-content__icons, .userIcon {
         & > ul {
           & > li {
             & > a,
@@ -176,23 +176,25 @@ header {
     .multilevel-header {
       padding-top: 0;
 
-@include respond(extra-large-mobile) {
+      @include respond(extra-large-mobile) {
         padding-top: 30px;
       }
 
-@include respond(large-mobile) {
+      @include respond(large-mobile) {
         padding-top: 30px;
       }
 
       &__top {
         display: none;
 
-@include respond(extra-large-mobile) {
+        @include respond(extra-large-mobile) {
           display: flex;
+          align-items: center;
         }
 
-@include respond(large-mobile) {
+        @include respond(large-mobile) {
           display: flex;
+          align-items: center;
         }
       }
       &__bottom {

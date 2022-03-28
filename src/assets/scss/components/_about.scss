@@ -282,32 +282,57 @@
 
   background-color: $home--background;
 
-@include respond(extra-large-mobile) {
+  @include respond(extra-large-mobile) {
     padding: 50px;
   }
 
-@include respond(large-mobile) {
-    padding: 80px;
+  @include respond(large-mobile) {
+    padding: 20px;
+    height: 250px;
   }
 
-@include respond(extra-small-mobile) {
+  @include respond(extra-small-mobile) {
     padding: 50px 30px;
   }
 
-@include respond(large-desktop) {
+  @include respond(large-desktop) {
     padding: 50px;
   }
 
-@include respond(small-desktop) {
+  @include respond(small-desktop) {
     padding: 80px 50px;
+  }
+  
+  .fontStyleSub {
+    font-size: 18px !important;
+    text-align: left;
+    font-family: 'cargenregular';
+    line-height: 1;
+    color: $black;
+
+    @include respond(large-mobile) {
+      font-size: 15px !important;
+      text-align: center;
+    }
+  }
+
+  .fontStyleMain {
+    font-size: 45px;
+    text-align: left;
+    font-family: 'cargenregular';
+    line-height: 1;
+    color: $white;
+
+    @include respond(large-mobile) {
+      font-size: 30px;
+      text-align: center;
+    }
   }
 
   &__title {
     font-family: $spectral;
     font-size: 40px;
     line-height: 1.5;
-
-    margin-bottom: 35px;
 
     color: $black--two;
 
@@ -399,6 +424,15 @@
   }
 }
 
+.mc-form {
+  @include respond(large-mobile) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+}
+
 .about-widget {
   .widget-title {
     font-size: 14px;
@@ -406,6 +440,30 @@
     line-height: 24px;
 
     color: $black--two;
+  }
+
+  .fontStyleMain {
+    font-size: 45px;
+    text-align: left;
+    font-family: 'cargenregular';
+    line-height: 1;
+
+    @include respond(large-mobile) {
+      font-size: 30px;
+      text-align: center;
+    }
+  }
+
+  .fontStyleDetail {
+    font-size: 18px !important;
+    text-align: left;
+    font-family: 'sailecmedium';
+    line-height: 1;
+
+    @include respond(large-mobile) {
+      font-size: 15px !important;
+      text-align: center;
+    }
   }
 
   .widget-content {

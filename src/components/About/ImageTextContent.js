@@ -17,10 +17,10 @@ const ImageTextContent = () => {
           </Col>
           <Col lg={6}>
             <div className="about-bg-content" style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
-              <p className="about-bg-content__text" style={{ fontFamily: "cargenregular", fontSize: "18px", color: "black" }}>
+              <p className="about-bg-content__text fontStyleSub">
                 Decorate yourself with your moving memories
               </p>
-              <h2 className="about-bg-content__title" style={{ fontFamily: "cargenregular", fontSize: "45px", color: "white" }}>
+              <h2 className="about-bg-content__title fontStyleMain">
                 Diamonds are a woman's best friends, and mine too.
               </h2>
             </div>

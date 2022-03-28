@@ -13,7 +13,7 @@ const ImageCtaAbout = () => {
         <Row>
           <Col lg={12} xl={12}>
             <div className="banner-cta-content">
-              <h2 className="banner-cta-content__subtitle" style={{ fontFamily: "cargenregular", fontSize: "45px", color: "black", textAlign: "right" }}>
+              <h2 className="banner-cta-content__subtitle" style={{ fontFamily: "cargenregular", fontSize: "2.5rem", color: "black", textAlign: "right" }}>
                 ABOUT YONATAN
               </h2>
             </div>
