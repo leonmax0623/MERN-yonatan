@@ -91,10 +91,30 @@ header {
       }
     }
 
+    .aboutIcon {
+      & > ul {
+        & > li {
+          & > a,
+          & > button {
+            & > svg {
+              fill: $black;
+            }
+          }
+        }
+      }
+    }
+
     .change-dropdown {
       & > span,
       & > svg {
         color: $white;
+      }
+    }
+
+    .customChange {
+      & > span,
+      & > svg {
+        color: $black;
       }
     }
   }
@@ -112,6 +132,17 @@ header {
 
     background-color: $white;
     box-shadow: 0 2px 5px rgba($black, 0.2);
+
+    .custom {
+      & > span,
+      & > svg {
+        color: $black;
+      }
+    }
+
+    .customLine {
+      color: $black;
+    }
 
     &.topbar-shadow {
       &:before {
@@ -186,6 +217,7 @@ header {
 
       &__top {
         display: none;
+        margin-top: 30px;
 
         @include respond(extra-large-mobile) {
           display: flex;

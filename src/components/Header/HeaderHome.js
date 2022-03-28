@@ -53,7 +53,7 @@ const HeaderHome = ({ aboutOverlay, cartItems, wishlistItems }) => {
             <Row className="multilevel-header__top d-none d-lg-flex">
               <Col lg={4} className="d-lg-block">
                 <div className="d-flex">
-                  <div className="language-change change-dropdown">
+                  <div className="language-change change-dropdown custom">
                     <span>English</span> <IoIosArrowDown />
                     <ul>
                       <li>
@@ -64,8 +64,8 @@ const HeaderHome = ({ aboutOverlay, cartItems, wishlistItems }) => {
                       </li>
                     </ul>
                   </div>
-                  <span className="header-separator">|</span>
-                  <div className="currency-change change-dropdown">
+                  <span className="header-separator customLine">|</span>
+                  <div className="currency-change change-dropdown custom">
                     <span>USD</span> <IoIosArrowDown />
                     <ul>
                       <li>
@@ -84,7 +84,7 @@ const HeaderHome = ({ aboutOverlay, cartItems, wishlistItems }) => {
                   <Link href="/" as={process.env.PUBLIC_URL + "/"}>
                     <a>
                       <img
-                        src={process.env.PUBLIC_URL + "/assets/images/yonatan-images/logo.png"}
+                        src={process.env.PUBLIC_URL + "/assets/images/yonatan-images/logo_about.png"}
                         className="img-fluid dark-logo"
                         alt=""
                       />

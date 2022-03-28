@@ -447,6 +447,7 @@
     text-align: left;
     font-family: 'cargenregular';
     line-height: 1;
+    color: $black;
 
     @include respond(large-mobile) {
       font-size: 30px;
@@ -459,6 +460,19 @@
     text-align: left;
     font-family: 'sailecmedium';
     line-height: 1;
+
+    @include respond(large-mobile) {
+      font-size: 15px !important;
+      text-align: center;
+    }
+  }
+
+  .fontStyleDetailAbout {
+    font-size: 18px !important;
+    text-align: left;
+    font-family: 'sailecmedium';
+    line-height: 1;
+    margin-bottom: 30px !important;
 
     @include respond(large-mobile) {
       font-size: 15px !important;
