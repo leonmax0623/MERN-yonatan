@@ -227,6 +227,7 @@ header {
         @include respond(large-mobile) {
           display: flex;
           align-items: center;
+          margin-top: 0px;
         }
       }
       &__bottom {
