@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { IoIosSearch } from "react-icons/io";
 import {
   getDiscountPrice, getIndividualCategories,
@@ -7,21 +7,29 @@ import {
   getIndividualTags, getProducts, setActiveSort
 } from "../../lib/product";
 import { ProductRating } from "../Product";
+import API from '../../api';
 
-const ShopSidebar = ({ products, getSortParams }) => {
-  const categories = getIndividualCategories(products);
-  const colors = getIndividualColors(products);
-  const tags = getIndividualTags(products);
-  const popularProducts = getProducts(products, "Bracelets", "popular", 3);
+const ShopSidebar = ({ categories, colors, popularProducts, searchProducts, getSortParams }) => {
+  // const categories = getIndividualCategories(products);
+  // const colors = getIndividualColors(products);
+  // const tags = getIndividualTags(products);
+  // const popularProducts = getProducts(products, "Bracelets", "popular", 3);
+  const [search, setSearch] = useState("");
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    
+    searchProducts(search);
+  }
 
   return (
     <div className="shop-sidebar">
       <div className="single-sidebar-widget space-mb--40">
         {/* search widget */}
         <div className="search-widget">
-          <form>
-            <input type="search" placeholder="Search products ..." />
-            <button type="button">
+          <form onSubmit={handleSearch}>
+            <input type="search" placeholder="Search products ..." value={search} onChange={e => setSearch(e.target.value)} />
+            <button type="submit">
               <IoIosSearch />
             </button>
           </form>

@@ -35,6 +35,7 @@ const ProductBasic = ({
   deleteFromCompare
 }) => {
   useEffect(() => {
+    console.log('product', product)
     document.querySelector("body").classList.remove("overflow-hidden");
   });
 
