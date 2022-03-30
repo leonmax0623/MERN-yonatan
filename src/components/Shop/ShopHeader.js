@@ -25,12 +25,12 @@ const ShopHeader = ({
               <div className="single-icon filter-dropdown">
                 <select
                   onChange={(e) =>
-                    getFilterSortParams("filterSort", e.target.value)
+                    getFilterSortParams("price", e.target.value)
                   }
                 >
                   <option value="default">Default</option>
-                  <option value="priceHighToLow">Price - High to Low</option>
-                  <option value="priceLowToHigh">Price - Low to High</option>
+                  <option value="desc">Price - High to Low</option>
+                  <option value="asc">Price - Low to High</option>
                 </select>
               </div>
 

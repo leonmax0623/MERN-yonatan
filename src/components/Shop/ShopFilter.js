@@ -7,11 +7,11 @@ import {
   setActiveSort
 } from "../../lib/product";
 
-const ShopFilter = ({ products, getSortParams }) => {
-  const categories = getIndividualCategories(products);
-  const colors = getIndividualColors(products);
-  const sizes = getProductsIndividualSizes(products);
-  const tags = getIndividualTags(products);
+const ShopFilter = ({ categories, colors, sizes, tags, getSortParams }) => {
+  // const categories = getIndividualCategories(products);
+  // const colors = getIndividualColors(products);
+  // const sizes = getProductsIndividualSizes(products);
+  // const tags = getIndividualTags(products);
 
   return (
     <div className="shop-advance-filter">

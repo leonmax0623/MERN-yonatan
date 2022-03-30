@@ -3,6 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import Paginator from "react-hooks-paginator";
 import { connect } from "react-redux";
 import { SlideDown } from "react-slidedown";
+import axios from 'axios';
 import { ImageCtaShop } from "../../components/Cta";
 import { LayoutHome } from "../../components/Layout";
 import {
@@ -10,9 +11,17 @@ import {
 } from "../../components/Shop";
 import initProducts from "../../data/products.json";
 import { getSortedProducts } from "../../lib/product";
+import initCategories from '../../data/categories.json';
+import initColors from '../../data/colors.json';
+import initSizes from '../../data/sizes.json';
+import initTags from '../../data/tags.json';
+import API from '../../api';
+
+const pageLimit = 12;
 
 const LeftSidebar = () => {
   const [layout, setLayout] = useState("grid four-column");
+  const [search, setSearch] = useState("");
   const [sortType, setSortType] = useState("");
   const [sortValue, setSortValue] = useState("");
   const [filterSortType, setFilterSortType] = useState("");
@@ -22,9 +31,20 @@ const LeftSidebar = () => {
   const [currentData, setCurrentData] = useState([]);
   const [sortedProducts, setSortedProducts] = useState([]);
   const [shopTopFilterStatus, setShopTopFilterStatus] = useState(false);
+  // const [params, setParams] = useState({
+  //   skip: 0,
+  //   limit: pageLimit,
+  //   search: '',
+  //   category: ''
+  // });
+  const [popularProducts, setPopularProducts] = useState([]);
   const [products, setProducts] = useState([]);
+  const [totalProducts, setTotalProducts] = useState(0);
 
-  const pageLimit = 20;
+  const categories = initCategories;
+  const colors = initColors;
+  const sizes = initSizes;
+  const tags = initTags;
 
   const getLayout = (layout) => {
     setLayout(layout);
@@ -40,21 +60,38 @@ const LeftSidebar = () => {
     setFilterSortValue(sortValue);
   };
 
-  useEffect(() => {
-    setProducts(initProducts);
+  useEffect(async () => {
+    console.log('aaa');
+    const response = await API.get('/products/popular/list');
+    console.log('popular', response);
+    setPopularProducts(response.data);
   }, []);
 
-  useEffect(() => {
-    let sortedProducts = getSortedProducts(products, sortType, sortValue);
-    const filterSortedProducts = getSortedProducts(
-      sortedProducts,
+  useEffect(async () => {
+    // let sortedProducts = getSortedProducts(products, sortType, sortValue);
+    // const filterSortedProducts = getSortedProducts(
+    //   sortedProducts,
+    //   filterSortType,
+    //   filterSortValue
+    // );
+    // sortedProducts = filterSortedProducts;
+    // setSortedProducts(sortedProducts);
+    // setCurrentData(sortedProducts.slice(offset, offset + pageLimit));
+    console.log('offset', offset);
+    const params = {
+      skip: offset,
+      limit: pageLimit,
+      search,
+      sortType,
+      sortValue,
       filterSortType,
-      filterSortValue
-    );
-    sortedProducts = filterSortedProducts;
-    setSortedProducts(sortedProducts);
-    setCurrentData(sortedProducts.slice(offset, offset + pageLimit));
-  }, [offset, products, sortType, sortValue, filterSortType, filterSortValue]);
+      filterSortValue,
+    };
+
+    const response = await API.get('/products', { params });
+    setProducts(response.data.data);
+    setTotalProducts(response.data.count);
+  }, [offset, search, sortType, sortValue, filterSortType, filterSortValue]);
 
   return (
     <LayoutHome>
@@ -65,15 +102,21 @@ const LeftSidebar = () => {
         <ShopHeader
           getLayout={getLayout}
           getFilterSortParams={getFilterSortParams}
-          productCount={products.length}
-          sortedProductCount={currentData.length}
+          productCount={totalProducts}
+          sortedProductCount={products.length}
           shopTopFilterStatus={shopTopFilterStatus}
           setShopTopFilterStatus={setShopTopFilterStatus}
         />
 
         {/* shop header filter */}
         <SlideDown closed={shopTopFilterStatus ? false : true}>
-          <ShopFilter products={products} getSortParams={getSortParams} />
+          <ShopFilter 
+            categories={categories}
+            colors={colors}
+            sizes={sizes}
+            tags={tags}
+            getSortParams={getSortParams} 
+          />
         </SlideDown>
 
         {/* shop page body */}
@@ -86,19 +129,22 @@ const LeftSidebar = () => {
               >
                 {/* shop sidebar */}
                 <ShopSidebar
-                  products={products}
+                  categories={categories}
+                  colors={colors}
+                  popularProducts={popularProducts}
+                  searchProducts={setSearch}
                   getSortParams={getSortParams}
                 />
               </Col>
 
               <Col lg={9} className="order-1 order-lg-2">
                 {/* shop products */}
-                <ShopProducts layout={layout} products={currentData} />
+                <ShopProducts layout={layout} products={products} />
 
                 {/* shop product pagination */}
                 <div className="pro-pagination-style">
                   <Paginator
-                    totalRecords={sortedProducts.length}
+                    totalRecords={totalProducts}
                     pageLimit={pageLimit}
                     pageNeighbours={2}
                     setOffset={setOffset}
