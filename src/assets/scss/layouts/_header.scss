@@ -78,7 +78,7 @@ header {
       }
     }
 
-    .header-content__icons {
+    .header-content__icons, .userIcon {
       & > ul {
         & > li {
           & > a,
@@ -91,10 +91,30 @@ header {
       }
     }
 
+    .aboutIcon {
+      & > ul {
+        & > li {
+          & > a,
+          & > button {
+            & > svg {
+              fill: $black;
+            }
+          }
+        }
+      }
+    }
+
     .change-dropdown {
       & > span,
       & > svg {
         color: $white;
+      }
+    }
+
+    .customChange {
+      & > span,
+      & > svg {
+        color: $black;
       }
     }
   }
@@ -112,6 +132,17 @@ header {
 
     background-color: $white;
     box-shadow: 0 2px 5px rgba($black, 0.2);
+
+    .custom {
+      & > span,
+      & > svg {
+        color: $black;
+      }
+    }
+
+    .customLine {
+      color: $black;
+    }
 
     &.topbar-shadow {
       &:before {
@@ -157,7 +188,7 @@ header {
         }
       }
 
-      .header-content__icons {
+      .header-content__icons, .userIcon {
         & > ul {
           & > li {
             & > a,
@@ -176,23 +207,27 @@ header {
     .multilevel-header {
       padding-top: 0;
 
-@include respond(extra-large-mobile) {
+      @include respond(extra-large-mobile) {
         padding-top: 30px;
       }
 
-@include respond(large-mobile) {
+      @include respond(large-mobile) {
         padding-top: 30px;
       }
 
       &__top {
         display: none;
+        margin-top: 30px;
 
-@include respond(extra-large-mobile) {
+        @include respond(extra-large-mobile) {
           display: flex;
+          align-items: center;
         }
 
-@include respond(large-mobile) {
+        @include respond(large-mobile) {
           display: flex;
+          align-items: center;
+          margin-top: 0px;
         }
       }
       &__bottom {

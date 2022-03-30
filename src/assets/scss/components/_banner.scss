@@ -428,6 +428,33 @@
 }
 
 .banner-cta-content {
+  .fontStyleMain {
+    font-size: 45px;
+    text-align: left;
+    font-family: 'cargenregular';
+    line-height: 1;
+    margin-bottom: 30px;
+
+    @include respond(large-mobile) {
+      font-size: 30px;
+      text-align: center;
+    }
+  }
+
+  .fontStyleDetail {
+    font-size: 18px !important;
+    text-align: left;
+    font-family: 'sailecmedium';
+    line-height: 1;
+    color: $blue--four;
+
+    @include respond(large-mobile) {
+      font-size: 15px !important;
+      text-align: center;
+      color: $white;
+    }
+  }
+
   &__title {
     font-size: 16px;
     font-weight: 600;

@@ -25,11 +25,80 @@ const FooterHome = ({ footerBgClass }) => {
   };
   return (
     <footer
-      className={`space-pt--100 space-pb--50 ${footerBgClass ? footerBgClass : "bg-color--grey"
+      className={`space-pt--50 space-pb--30 ${footerBgClass ? footerBgClass : "bg-color--grey"
         }`}
     >
       <Container className="wide">
-        <Row>
+        <Row className="d-flex d-lg-none">
+          <Col className="footer-single-widget" style={{ display: "flex", flexDirection: "column", justifyContent: "center", paddingLeft: "30px", paddingRight: "30px" }}>
+            {/* logo */}
+
+            <div className="footer-subscribe-widget" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <h2 className="footer-single-widget__title">NEWSLETTERS</h2>
+              <p className="footer-subscribe-widget__subtitle">
+                Subscribe to receive updates, access to exclusive deals, and more.
+              </p>
+              {/* email subscription */}
+
+              <input
+                type="text"
+                placeholder="Enter Your Email Address"
+                required
+                style={{ height: 45, marginBottom: "20px", width: "100%", textAlign: 'center' }}
+              />
+              <br />
+              <div className="logo space-mb--35" style={{ display: 'flex', justifyContent: 'center' }}>
+                <button className="lezada-button lezada-button--medium" style={{ width: '50%' }}>
+                  SUBSCRIBE
+                </button>
+              </div>
+
+            </div>
+            <div className="footer-single-widget__copyright" style={{ display: "flex", justifyContent: "space-around", marginBottom: "20px" }}>
+              <a href="https://www.facebook.com">
+                <FaFacebookF />
+              </a>
+              <a href="https://www.instagram.com">
+                <FaInstagram />
+              </a>
+              <a href="https://www.youtube.com">
+                <FaPinterest />
+              </a>
+              <a href="https://www.twitter.com">
+                <FaYoutube />
+              </a>
+              <a href="https://www.youtube.com">
+                <FaLinkedin />
+              </a>
+            </div>
+
+            <div className="logo space-mb--35" style={{ display: 'flex', justifyContent: 'center' }}>
+              <img
+                src={
+                  process.env.PUBLIC_URL + footerBgClass ===
+                    "bg-color--blue-two"
+                    ? "/assets/images/yonatan-images/logo_about.png"
+                    : "/assets/images/yonatan-images/logo_about.png"
+                }
+                className="img-fluid d-flex d-lg-none"
+                alt=""
+                style={{ width: "40%" }}
+              />
+              <img
+                src={
+                  process.env.PUBLIC_URL + footerBgClass ===
+                    "bg-color--blue-two"
+                    ? "/assets/images/yonatan-images/logo_about.png"
+                    : "/assets/images/yonatan-images/logo_about.png"
+                }
+                className="img-fluid d-none d-lg-flex"
+                alt=""
+                style={{ width: "60%" }}
+              />
+            </div>
+          </Col>
+        </Row>
+        <Row className="d-none d-lg-flex">
           <Col className="footer-single-widget" style={{ display: "flex", flexDirection: "column", justifyContent: "center", paddingLeft: "30px", paddingRight: "30px" }}>
             {/* logo */}
 

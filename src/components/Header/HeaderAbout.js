@@ -2,10 +2,10 @@ import Link from "next/link";
 import { Fragment, useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import {
-  IoIosArrowDown, IoIosCart, IoIosHeartEmpty, IoIosMenu, IoIosSearch,
-  IoMdPerson
+  IoIosArrowDown, IoIosCart, IoIosHeartEmpty, IoIosMenu, IoIosSearch, IoMdPerson
 } from "react-icons/io";
 import { connect } from "react-redux";
+import UserIcon from '../../../public/assets/images/yonatan-images/user.svg';
 import AboutOverlay from "./elements/AboutOverlay";
 import CartOverlay from "./elements/CartOverlay";
 import MobileMenu from "./elements/MobileMenu";
@@ -13,7 +13,7 @@ import NavigationAbout from "./elements/NavigationAbout";
 import SearchOverlay from "./elements/SearchOverlay";
 import WishlistOverlay from "./elements/WishlistOverlay";
 
-const HeaderHome = ({ aboutOverlay, cartItems, wishlistItems }) => {
+const HeaderAbout = ({ aboutOverlay, cartItems, wishlistItems }) => {
   const [scroll, setScroll] = useState(0);
   const [headerTop, setHeaderTop] = useState(0);
   const [headerHeight, setHeaderHeight] = useState(0);
@@ -50,10 +50,10 @@ const HeaderHome = ({ aboutOverlay, cartItems, wishlistItems }) => {
       >
         <div className="multilevel-header">
           <Container className="wide">
-            <Row className="multilevel-header__top">
-              <Col lg={4} className="d-none d-lg-block">
+            <Row className="multilevel-header__top d-none d-lg-flex">
+              <Col lg={4} className="d-lg-block">
                 <div className="d-flex">
-                  <div className="language-change change-dropdown">
+                  <div className="language-change change-dropdown customChange">
                     <span>English</span> <IoIosArrowDown />
                     <ul>
                       <li>
@@ -64,8 +64,8 @@ const HeaderHome = ({ aboutOverlay, cartItems, wishlistItems }) => {
                       </li>
                     </ul>
                   </div>
-                  <span className="header-separator">|</span>
-                  <div className="currency-change change-dropdown">
+                  <span className="header-separator" style={{ color: 'black' }}>|</span>
+                  <div className="currency-change change-dropdown customChange">
                     <span>USD</span> <IoIosArrowDown />
                     <ul>
                       <li>
@@ -78,7 +78,7 @@ const HeaderHome = ({ aboutOverlay, cartItems, wishlistItems }) => {
                   </div>
                 </div>
               </Col>
-              <Col xs={6} lg={4} className="text-left text-lg-center">
+              <Col xs={6} lg={4} className="text-lg-center">
                 {/* logo */}
                 <div className="header-content__logo">
                   <Link href="/" as={process.env.PUBLIC_URL + "/"}>
@@ -100,10 +100,10 @@ const HeaderHome = ({ aboutOverlay, cartItems, wishlistItems }) => {
                 </div>
               </Col>
               <Col xs={6} lg={4} className="text-right">
-                <div className="header-content__icons">
-                  <ul className="d-none d-lg-block">
+                <div className="header-content__icons aboutIcon">
+                  <ul className="d-lg-block">
                     <li>
-                      <button className="header-content-about__icons"
+                      <button
                         onClick={() => {
                           setOffCanvasSearchActive(true);
                           document
@@ -163,42 +163,50 @@ const HeaderHome = ({ aboutOverlay, cartItems, wishlistItems }) => {
                       </button>
                     </li>
                   </ul>
-
-                  <ul className="d-block d-lg-none">
+                </div>
+              </Col>
+            </Row>
+            <Row className="multilevel-header__top d-flex d-lg-none align-items-center">
+              <Col xs={4} lg={4} className="d-block">
+                <div className="d-flex aboutIcon">
+                  <ul className="d-flex">
                     <li>
                       <Link
-                        href="/other/wishlist"
-                        as={process.env.PUBLIC_URL + "/other/wishlist"}
+                        href="/other/login-register"
+                        as={process.env.PUBLIC_URL + "/other/login-register"}
                       >
                         <a>
-                          <IoIosHeartEmpty />
-                          {wishlistItems.length >= 1 ? (
-                            <span className="count">
-                              {wishlistItems.length ? wishlistItems.length : ""}
-                            </span>
-                          ) : (
-                            ""
-                          )}
+                          <UserIcon width="2em" height="2em" />
                         </a>
                       </Link>
                     </li>
-                    <li>
-                      <Link
-                        href="/other/cart"
-                        as={process.env.PUBLIC_URL + "/other/cart"}
-                      >
-                        <a>
-                          <IoIosCart />
-                          {cartItems.length >= 1 ? (
-                            <span className="count">
-                              {cartItems.length ? cartItems.length : ""}
-                            </span>
-                          ) : (
-                            ""
-                          )}
-                        </a>
-                      </Link>
-                    </li>
+                  </ul>
+                </div>
+              </Col>
+              <Col xs={4} lg={4} className="text-right">
+                {/* logo */}
+                <div className="header-content__logo">
+                  <Link href="/" as={process.env.PUBLIC_URL + "/"}>
+                    <a>
+                      <img
+                        src={process.env.PUBLIC_URL + "/assets/images/yonatan-images/logo_about.png"}
+                        className="img-fluid dark-logo"
+                        alt=""
+                      />
+                      <img
+                        src={
+                          process.env.PUBLIC_URL + "/assets/images/yonatan-images/logo_about.png"
+                        }
+                        className="img-fluid white-logo"
+                        alt=""
+                      />
+                    </a>
+                  </Link>
+                </div>
+              </Col>
+              <Col xs={4} lg={4} className="text-right">
+                <div className="header-content__icons">
+                  <ul className="d-block">
                     <li>
                       <button
                         onClick={() => setOffCanvasMobileMenuActive(true)}
@@ -265,4 +273,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(HeaderHome);
+export default connect(mapStateToProps)(HeaderAbout);

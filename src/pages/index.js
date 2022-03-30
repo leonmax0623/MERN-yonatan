@@ -49,8 +49,8 @@ const Home = ({ products }) => {
                         />
                       </div>
                       <div className="member-caption" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                        <h2 className="name" style={{ fontFamily: "cargenregular", fontSize: "45px", marginBottom: "20px" }}>{single.name}</h2>
-                        <span className="subtext" style={{ fontFamily: "sailecmedium", fontSize: "18px" }}>{single.designation}</span>
+                        <h2 className="name fontStyleMain">{single.name}</h2>
+                        <span className="subtext fontStyleDetail">{single.designation}</span>
                       </div>
                     </div>
                   </Col>
@@ -65,26 +65,36 @@ const Home = ({ products }) => {
           <Row>
             <Col xl={6} lg={6} className="mr-auto" style={{ paddingLeft: "70px", paddingRight: "70px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
               <div className="about-widget space-mb--35">
-                <h2 className="widget-title space-mb--25" style={{ fontFamily: "cargenregular", fontSize: "40px", lineHeight: "initial" }}>The best time to make dreams <br />come true is now</h2>
-                <p className="widget-content" style={{ fontFamily: 'sailecmedium', fontSize: "20px" }}>
-                  I invite you to contact me and start <br />the exciting journey, together.
+                <h2 className="widget-title space-mb--25 fontStyleMain">The best time to make dreams come true is now</h2>
+                <p className="widget-content fontStyleDetail">
+                  I invite you to contact me and start the exciting journey, together.
                 </p>
-
               </div>
-              <div className="mc-form">
+              <div className="mc-form d-none d-lg-flex">
                 <button className="lezada-button lezada-button--medium">
                   Sign Up
                 </button>
                 <input
                   type="text"
-                  placeholder="Email"
+                  placeholder="Enter your Email"
                   required
-                  style={{ height: 45 }}
+                  style={{ height: 45, textAlign: 'center' }}
                 />
+              </div>
+              <div className="mc-form d-flex d-lg-none">
+                <input
+                  type="text"
+                  placeholder="Enter your Email"
+                  required
+                  style={{ height: 45, textAlign: 'center' }}
+                />
+                <button className="lezada-button lezada-button--medium">
+                  Sign Up
+                </button>
               </div>
             </Col>
             <Col xl={6} lg={6}>
-              <div className="about-page-2-image space-mb-mobile-only--50">
+              <div className="about-page-2-image">
                 <img
                   src={
                     process.env.PUBLIC_URL +
